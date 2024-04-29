@@ -1,0 +1,33 @@
+Write a Python program that takes two numbers as input and performs basic arithmetic operations (addition, subtraction, multiplication, division) on them.
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Cannot divide by zero"
+    else:
+        return x / y
+
+# Taking two numbers as input
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+
+# Performing arithmetic operations
+print("Addition:", add(num1, num2))
+print("Subtraction:", subtract(num1, num2))
+
+output:
+Enter the first number: 10
+Enter the second number: 0
+Addition: 10.0
+Subtraction: 10.0
+Multiplication: 0.0
+Division: Cannot divide by zero
+print("Multiplication:", multiply(num1, num2))
+print("Division:", divide(num1, num2))
