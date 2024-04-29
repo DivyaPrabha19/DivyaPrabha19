@@ -1,0 +1,26 @@
+Write a Python program that takes three integers as input and prints the largest among them. However, if two or more integers are equal and larger than the third integer, print "Equal numbers are larger". If all three integers are equal, print "All numbers are equal". 
+def find_largest(num1, num2, num3):
+    if num1 == num2 == num3:
+        print("All numbers are equal")
+    elif num1 == num2 and num1 > num3:
+        print("Equal numbers are larger")
+    elif num1 == num3 and num1 > num2:
+        print("Equal numbers are larger")
+    elif num2 == num3 and num2 > num1:
+        print("Equal numbers are larger")
+    else:
+        print(max(num1, num2, num3))
+
+# Taking three integers as input
+num1 = int(input("Enter the first integer: "))
+num2 = int(input("Enter the second integer: "))
+num3 = int(input("Enter the third integer: "))
+
+# Finding the largest among them
+find_largest(num1, num2, num3)
+
+output:
+Enter the first integer: 5
+Enter the second integer: 8
+Enter the third integer: 3
+8
