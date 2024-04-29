@@ -1,0 +1,21 @@
+Write a Python program that takes three numbers as input and prints them in ascending order. However, if two or more numbers are equal, print "Numbers are not distinct.
+def print_in_ascending_order(num1, num2, num3):
+    if num1 == num2 == num3:
+        print("Numbers are not distinct")
+    else:
+        sorted_nums = sorted([num1, num2, num3])
+        print(*sorted_nums)
+
+# Taking three numbers as input
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+num3 = float(input("Enter the third number: "))
+
+# Printing the numbers in ascending order
+print_in_ascending_order(num1, num2, num3)
+
+output:
+Enter the first number: 5
+Enter the second number: 8
+Enter the third number: 3
+3 5 8
