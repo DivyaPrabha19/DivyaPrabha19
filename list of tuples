@@ -1,0 +1,17 @@
+5. You have a list of tuples, each containing a student's name and their corresponding scores in three subjects (Math, Physics, Chemistry). Write a Python program to sort the list of tuples based on the total score (sum of scores in all subjects) in descending order.
+# Sample list of tuples containing (name, Math score, Physics score, Chemistry score)
+students_scores = [("Alice", 90, 85, 95), ("Bob", 80, 75, 85), ("Charlie", 95, 90, 100)]
+
+# Sort the list of tuples based on the total score in descending order
+sorted_students = sorted(students_scores, key=lambda x: sum(x[1:]), reverse=True)
+
+# Print the sorted list of tuples
+print("Sorted list of tuples based on total score (in descending order):")
+for student in sorted_students:
+    print(student)
+
+Sample Output :
+Sorted list of tuples based on total score (in descending order):
+('Charlie', 95, 90, 100)
+('Alice', 90, 85, 95)
+('Bob', 80, 75, 85)
