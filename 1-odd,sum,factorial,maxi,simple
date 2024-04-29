@@ -1,0 +1,91 @@
+5.Check if a given number is even or odd:
+
+def check_even_odd(num):
+    if num % 2 == 0:
+        print(num, "is even")
+    else:
+        print(num, "is odd")
+
+# Taking a number as input
+number = int(input("Enter a number: "))
+
+# Checking if the number is even or odd
+check_even_odd(number)
+
+Output:
+Enter a number: 10
+10 is even
+
+6. Calculate the sum of digits of a given number:
+
+def sum_of_digits(number):
+    total = 0
+    while number > 0:
+        digit = number % 10
+        total += digit
+        number //= 10
+    return total
+
+# Taking a number as input
+number = int(input("Enter a number: "))
+
+# Calculating the sum of digits
+print("Sum of digits:", sum_of_digits(number))
+
+Output:
+Enter a number: 12345
+Sum of digits: 15
+
+
+7. Calculate the factorial of a given number:
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# Taking a number as input
+number = int(input("Enter a number: "))
+
+# Calculating the factorial
+print("Factorial of", number, "is", factorial(number))
+Output:
+Enter a number: 5
+Factorial of 5 is 120
+
+8. Find the maximum element in a given list of numbers:
+def find_max(numbers):
+    if len(numbers) == 0:
+        return None
+    else:
+        return max(numbers)
+
+# Taking a list of numbers as input
+numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+
+# Finding the maximum element
+print("Maximum element:", find_max(numbers))
+Output:
+Enter numbers separated by space: 10 5 20 15
+Maximum element: 20
+
+
+9. Calculate simple interest:
+def calculate_simple_interest(principal, rate, time):
+    interest = (principal * rate * time) / 100
+    return interest
+
+# Taking inputs for principal amount, rate of interest, and time
+principal_amount = float(input("Enter principal amount: "))
+rate_of_interest = float(input("Enter rate of interest (in percentage): "))
+time_period = float(input("Enter time period (in years): "))
+
+# Calculating simple interest
+interest = calculate_simple_interest(principal_amount, rate_of_interest, time_period)
+print("Simple interest:", interest)
+Output:
+Enter principal amount: 1000
+Enter rate of interest (in percentage): 5
+Enter time period (in years): 2
+Simple interest: 100.0
