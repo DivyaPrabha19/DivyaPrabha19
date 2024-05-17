@@ -1,0 +1,177 @@
+
+### Medium Level
+
+#### 1. Word Frequency
+```python
+import string
+
+def word_frequency(s):
+    s = s.lower()
+    translator = str.maketrans('', '', string.punctuation)
+    s = s.translate(translator)
+    words = s.split()
+    freq = {}
+    
+    for word in words:
+        if word in freq:
+            freq[word] += 1
+        else:
+            freq[word] = 1
+    
+    return freq
+
+# Example usage
+print(word_frequency("Hello, hello! How are you? Are you okay?"))
+```
+
+#### 2. Vowel Count
+```python
+def count_vowels(s):
+    vowels = "aeiou"
+    count = 0
+    for char in s.lower():
+        if char in vowels:
+            count += 1
+    return count
+
+# Example usage
+print(count_vowels("Hello World"))
+```
+
+#### 3. Rotation Check
+```python
+def are_rotations(str1, str2):
+    if len(str1) != len(str2):
+        return False
+    return str2 in str1 + str1
+
+# Example usage
+print(are_rotations("abcd", "cdab"))
+```
+
+#### 4. Pangram Check
+```python
+def is_pangram(s):
+    alphabet = set("abcdefghijklmnopqrstuvwxyz")
+    return alphabet <= set(s.lower())
+
+# Example usage
+print(is_pangram("The quick brown fox jumps over the lazy dog"))
+```
+
+#### 5. Palindrome Check
+```python
+def is_palindrome_sentence(s):
+    s = ''.join(filter(str.isalnum, s)).lower()
+    return s == s[::-1]
+
+# Example usage
+print(is_palindrome_sentence("A man, a plan, a canal, Panama!"))
+```
+
+### Low Level
+
+#### 1. Anagram Check
+```python
+def are_anagrams(str1, str2):
+    return sorted(str1.lower()) == sorted(str2.lower())
+
+# Example usage
+print(are_anagrams("listen", "silent"))
+```
+
+#### 2. Character Count
+```python
+def char_count(s):
+    s = s.lower()
+    count_dict = {}
+    for char in s:
+        if char in count_dict:
+            count_dict[char] += 1
+        else:
+            count_dict[char] = 1
+    return count_dict
+
+# Example usage
+print(char_count("Hello World"))
+```
+
+#### 3. Reverse String
+```python
+def reverse_string(s):
+    reversed_str = ''
+    for char in s:
+        reversed_str = char + reversed_str
+    return reversed_str
+
+# Example usage
+print(reverse_string("Hello"))
+```
+
+#### 4. Remove Duplicates
+```python
+def remove_duplicates(s):
+    seen = set()
+    result = ''
+    for char in s:
+        if char not in seen:
+            seen.add(char)
+            result += char
+    return result
+
+# Example usage
+print(remove_duplicates("hello"))
+```
+
+#### 5. Longest Word
+```python
+def longest_word(s):
+    words = s.split()
+    longest = max(words, key=len)
+    return longest
+
+# Example usage
+print(longest_word("This is a simple test sentence"))
+```
+
+### High Level
+
+#### 1. Password Strength Checker
+```python
+def check_password_strength(password):
+    if len(password) < 6:
+        return "Weak"
+    elif len(password) <= 10:
+        return "Medium"
+    else:
+        return "Strong"
+
+# Example usage
+print(check_password_strength("password123"))
+```
+
+#### 2. Generate Email Address
+```python
+def generate_email(first_name, last_name):
+    email = f"{first_name.lower()}.{last_name.lower()}@example.com"
+    return email
+
+# Example usage
+print(generate_email("John", "Doe"))
+```
+
+#### 3. Username Validation
+```python
+import re
+
+def validate_username(username):
+    if re.match("^[a-zA-Z][a-zA-Z0-9]{5,11}$", username):
+        return "Valid username"
+    else:
+        return "Invalid username"
+
+# Example usage
+print(validate_username("User123"))
+```
+
+These code snippets cover the requirements for each task and should provide the necessary functionality as described.
